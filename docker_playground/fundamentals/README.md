@@ -2,7 +2,7 @@
  * `parent1` rund `/proc/self/exe` which is a special file containing an
    in-memory iage of the current executable. In other words, we run ourselves,
    but passing `child` as a first parameter. So right now we are running a 
-   program that allows us to run another user-requested program suplied in `o.Args[2:]` 
+   program that allows us to run another user-requested program suplied in `os.Args[2:]` 
 
 2. Adding Namspaces
  * Add this to the second line of the `parent` method to pass extra flags when
