@@ -72,7 +72,7 @@ func writeTweets(tweetCount int, path string) error {
 	// write tweets to file
 	w := bufio.NewWriter(file)
 	for i, tweet := range tweets {
-		fmt.Printf("%-2d) %-20s: %s\n", i, tweet.User.ScreenName, tweet.Text)
+		fmt.Printf("%2d) %15s:\t %s\n", i, tweet.User.ScreenName, tweet.Text)
 
 		jsonTweet, _ := json.Marshal(tweet)
 		fmt.Fprintln(w, string(jsonTweet))

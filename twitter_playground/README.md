@@ -28,11 +28,11 @@ we default to 20.
 After this we call the func `writeTweets` which will do the following:
 
 1. Get the credentials to authenticate against the twitter API from the
-environment. Here the `twitterConfig` struct willbe used to get the env variables from our 
-session. This struct takes advantage of the [`env` package](https://github.com/caarlos0/env)
+   environment. Here the `twitterConfig` struct willbe used to get the env variables from our 
+   session. This struct takes advantage of the [`env` package](https://github.com/caarlos0/env)
 
 2. We utilize the package [`oauth1](https://github.com/dghubble/go-twitter/tree/master/examples)` 
-to authenticate or app.
+   to authenticate or app.
 
 3. Instantiate a new client.
 
