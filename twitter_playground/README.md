@@ -47,3 +47,24 @@ After this we call the func `writeTweets` which will do the following:
    each tweet to stdout and convert the struct to json then to a string to be
    writen to file.
 
+## Extra
+To get a better insight into the `twitter` package check these out:
+* [Tweet](https://github.com/dghubble/go-twitter/blob/master/twitter/statuses.go)
+
+* [User](https://github.com/dghubble/go-twitter/blob/master/twitter/users.go)
+
+# Related Resources
+* [os](https://golang.org/pkg/os/)
+
+* [bufio](https://golang.org/pkg/bufio/)
+
+* [strconv](https://tip.golang.org/pkg/strconv/)
+
+* [JSON and Go](https://blog.golang.org/json-and-go)
+
+* [Go by example: env vars](https://gobyexample.com/environment-variables)
+
+* [More on tricks to deal with env vars](https://github.com/caarlos0-graveyard/go-idioms)
+
+* [Env vars to structs](https://github.com/caarlos0/env)
+
