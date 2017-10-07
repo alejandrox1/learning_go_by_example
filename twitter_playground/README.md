@@ -31,7 +31,7 @@ After this we call the func `writeTweets` which will do the following:
    environment. Here the `twitterConfig` struct willbe used to get the env variables from our 
    session. This struct takes advantage of the [`env` package](https://github.com/caarlos0/env)
 
-2. We utilize the package [`oauth1`](https://github.com/dghubble/go-twitter/tree/master/examples)` 
+2. We utilize the package [`oauth1`](https://github.com/dghubble/go-twitter/tree/master/examples)
    to authenticate or app.
 
 3. Instantiate a new client.
