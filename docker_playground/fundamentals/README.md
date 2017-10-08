@@ -28,9 +28,9 @@ In order to change this we will use the following to swap into a root
 filesystem - place these at the begining of `child()`:
 ```
 must(syscall.Mount("rootfs", "rootfs", "", syscall.MS_BIND, ""))
-	must(os.MdkirAll("rootfs/oldrootfs", 0700))
-	must(syscal.PivotRoot("rootfs", "rootfs/oldrootfs"))
-	must(os.Chdir("/"))
+must(os.MdkirAll("rootfs/oldrootfs", 0700))
+must(syscal.PivotRoot("rootfs", "rootfs/oldrootfs"))
+must(os.Chdir("/"))
 ```
 
 The last two lines tell the OS to move the current directory at `/` to
