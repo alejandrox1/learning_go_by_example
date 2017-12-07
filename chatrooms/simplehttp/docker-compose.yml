@@ -1,0 +1,30 @@
+version: "3"
+networks:
+    db_net:
+        driver: bridge
+
+services:
+    db:
+        image: postgres:10  
+        hostname: db                                                   
+        container_name: db                                            
+        environment:                                                            
+            - POSTGRES_USER=user                                                
+            - POSTGRES_PASSWORD=pass                                            
+            - POSTGRES_DB=db
+        networks:
+            - db_net
+        ports:
+            - 5432:5432
+
+    api:                        
+        env_file: environment.env
+        build: .      
+        hostname: api
+        container_name: api
+        depends_on:                                                             
+            - db                                                                
+        networks:                                                               
+            - db_net
+        ports:
+            - 8080:8080
