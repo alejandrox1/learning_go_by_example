@@ -3,7 +3,7 @@ package lexer
 import (
 	"testing"
 
-	"github.com/alejandrox1/learning_go_by_example/interpreter/first_simplelexer/token"
+	"github.com/alejandrox1/learning_go_by_example/interpreter/01_simplelexer/token"
 )
 
 func TestNextToken(t *testing.T) {
