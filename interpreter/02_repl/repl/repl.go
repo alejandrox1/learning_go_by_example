@@ -5,8 +5,8 @@ import (
 	"fmt"
 	"io"
 
-	"github.com/alejandrox1/learning_go_by_example/interpreter/second_repl/lexer"
-	"github.com/alejandrox1/learning_go_by_example/interpreter/second_repl/token"
+	"github.com/alejandrox1/learning_go_by_example/interpreter/02_repl/lexer"
+	"github.com/alejandrox1/learning_go_by_example/interpreter/02_repl/token"
 )
 
 const PROMPT = ">>"
