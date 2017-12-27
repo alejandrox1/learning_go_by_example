@@ -3,3 +3,6 @@
 # crypto
 *.key  
 *.pem
+
+# some compiling going on
+*.o
