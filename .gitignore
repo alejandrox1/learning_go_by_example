@@ -1,3 +1,4 @@
+# env files
 *.env
 
 # crypto
@@ -6,3 +7,9 @@
 
 # some compiling going on
 *.o
+
+# backups
+*.swp
+
+# Txt files are usually for demonstrations
+*.txt
