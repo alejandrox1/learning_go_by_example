@@ -6,8 +6,6 @@ import (
 	"encoding/gob"
 	"log"
 	"time"
-
-	"github.com/boltdb/bolt"
 )
 
 // Block keeps the Block's headers and a Data section.
