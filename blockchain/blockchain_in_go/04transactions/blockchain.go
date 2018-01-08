@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"log"
+	"os"
 
 	"github.com/boltdb/bolt"
 )
@@ -53,7 +54,13 @@ func (i *BlockchainIterator) Next() *Block {
 
 
 
-
+// FindUnspentTransactions returns a list of transactions containing unspent
+// output.
+func (bc *Blockchain) FindUnspentTransactions(address string) []Transaction {
+	var unspentTXs []Transaction
+	spentTXOs := make(map[tring][]int)
+	bci := bc.Iterator()
+}
 
 
 func dbExists() bool {
@@ -110,7 +117,7 @@ func CreateBlockchain(address string) *Blockchain {
 			log.Panic(err)
 		}
 
-		err := b.Put(genesis.Hash, genesis.Serialize())
+		err = b.Put(genesis.Hash, genesis.Serialize())
 		if err != nil {
 			log.Panic(err)
 		}

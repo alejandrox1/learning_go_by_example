@@ -6,6 +6,8 @@ import (
 	"encoding/gob"
 	"log"
 	"time"
+
+	"github.com/boltdb/bolt"
 )
 
 // Block keeps the Block's headers and a Data section.
@@ -14,9 +16,8 @@ type Block struct {
 	Transactions  []*Transaction
 	PrevBlockHash []byte
 	Hash          []byte
-	Nonce		  int
+	Nonce         int
 }
-
 
 // NewBlock will create a block and return a reference to it.
 func NewBlock(transactions []*Transaction, prevBlockHash []byte) *Block {
@@ -39,7 +40,6 @@ func NewGenesisBlock(coinbase *Transaction) *Block {
 	return NewBlock([]*Transaction{coinbase}, []byte{})
 }
 
-
 // Serialize serializes a Block struct.
 func (b *Block) Serialize() []byte {
 	var result bytes.Buffer
@@ -56,4 +56,16 @@ func DeserializeBlock(d []byte) *Block {
 		log.Panic(err)
 	}
 	return &block
+}
+
+// HashTransactions returns a hash of the transactions in a given block.
+func (b *Block) HashTransactions() []byte {
+	var txHashes [][]byte
+	var txHash [32]byte
+
+	for _, tx := range b.Transactions {
+		txHashes = append(txHashes, tx.ID)
+	}
+	txHash = sha256.Sum256(bytes.Join(txHashes, []byte{}))
+	return txHash[:]
 }
