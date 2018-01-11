@@ -211,7 +211,7 @@ func NewUTXOTransaction(from string, to string, amount int, bc *Blockchain) *Tra
 		outputs = append(outputs, *NewTXOutput(acc-amount, from))
 	}
 	tx := Transaction{nil, inputs, outputs}
-	tx.Hash()
+	tx.ID = tx.Hash()
 	bc.SignTransaction(&tx, wallet.PrivateKey)
 
 	return &tx

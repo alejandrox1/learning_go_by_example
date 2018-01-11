@@ -46,7 +46,7 @@ func (w Wallet) GetAddress() []byte {
 
 // ValidateAddress checks if a given address is valid.
 func ValidateAddress(address string) bool {
-	pubKeyHash := Base58Encode([]byte(address))
+	pubKeyHash := Base58Decode([]byte(address))
 	actualChecksum := pubKeyHash[len(pubKeyHash)-addressCheckSumLen:]
 
 	version := pubKeyHash[0]
